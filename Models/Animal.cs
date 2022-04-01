@@ -5,9 +5,9 @@ namespace AnimalShelterApi.Models
   public class Animal
   {
     public int AnimalId { get; set; }
-    [Required]
+    // [Required]
     public string Name { get; set; }
-    [Required]
+    // [Required]
     public string Species { get; set; }
   }
 }
