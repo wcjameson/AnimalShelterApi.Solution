@@ -88,7 +88,7 @@ namespace AnimalShelterApi.Controllers
 
       return NoContent();
     }
-    //PUT: Animals
+    //POST: api/Animals
     ///<summary>
     ///Add a new animal
     ///</summary>
