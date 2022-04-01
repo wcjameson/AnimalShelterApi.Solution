@@ -1,5 +1,7 @@
 # AnimalShelterApi
 
+![image](/wwwroot/img/chrome_VbHn7MSDfL.png)
+
 #### An API to keep track of dogs and cats in a shelter
 
 #### By William Jameson
@@ -83,13 +85,13 @@ DELETE /api/animals/{id}
 `https://localhost:5000/api/animals/?name=robert&species=dog`
 
 #### Sample JSON Response
-`
+```
 {
   "Id": 1,
   "Name": "Robert",
   "Species": "Dog"
 }
-`
+```
 
 ## Known Bugs
 
