@@ -72,7 +72,22 @@ GET /api/animals/{id}
 PUT /api/animals/{id}
 DELETE /api/animals/{id}
 `
+#### Path Parameters
 
+| Parameter | Type | Default | Required | Description |
+| name      | string| none   | false    | Return matches by name |
+| species   | string| none   | false    | Return matches by animal species |
+
+#### Example Query
+`https://localhost:5000/api/animals/?name=robert&species=dog`
+
+#### Sample JSON Response
+`
+{
+  "Id": 1,
+  "Name": "Robert",
+  "Species": "Dog"
+}
 ## Known Bugs
 
 * _None_
