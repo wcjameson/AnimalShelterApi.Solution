@@ -45,13 +45,33 @@ _An API that provides a way to keep track of dogs or cats(or any animal) in an a
 #### To Create Database using Migrations
 
 * _navigate to the project directory in your terminal/command line_
-* _navigate to the subdirectory Factory and enter ```dotnet ef database update``` to create a new local database for the project_
+* _navigate to the directory AnimalShelterApi and enter ```dotnet ef database update``` to create a new local database for the project_
 * _the database will take the name specified in your ```appsettings.json``` file and can be viewed using MySQL_
 
 #### To Run the Web Application
 
-* _navigate to the subdirectory Factory and enter ```dotnet run``` for a snapshot server or ```dotnet watch run``` for a live updating server for the application_
+* _navigate to the directory AnimalShelterApi and enter ```dotnet run``` for a snapshot server or ```dotnet watch run``` for a live updating server for the application_
 * _access the server in your browser by entering ```localhost:5000``` into your navigation bar_
+
+## API Documentation
+Explore the API endpoints in Postman or a browser.
+
+### Using Swagger Documentation
+To explore the AnimalShelterApi with NSwag, launch the project using ```dotnet run``` with the Terminal or Powershell, and input the following URL into your browser: ```http://localhost:5000/swagger```
+
+
+## Animals (Endpoints)
+
+Access information about the animals in the shelter
+
+#### HTTP Request
+`
+GET /api/animals
+POST /api/animals
+GET /api/animals/{id}
+PUT /api/animals/{id}
+DELETE /api/animals/{id}
+`
 
 ## Known Bugs
 
