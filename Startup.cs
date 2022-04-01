@@ -1,18 +1,18 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+// using System.Collections.Generic;
+// using System.Linq;
+// using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using System.Reflection;
 using System.IO;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+// using Microsoft.AspNetCore.HttpsPolicy;
+// using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+// using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using AnimalShelterApi.Models;
 
@@ -38,7 +38,13 @@ namespace AnimalShelterApi
         {
           Title = "AnimalShelterApi",
           Version = "v1",
-          Description = "An ASP.NET Core Web Api to keep track of dogs and cats in a shelter"
+          Description = "An ASP.NET Core Web Api to keep track of dogs and cats in a shelter",
+          Contact = new OpenApiContact
+            {
+                Name = "William Jameson",
+                Email = "williamjameson90@gmail.com",
+                Url = new Uri("https://github.com/wcjameson"),
+            }
         });
         var xml = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
         c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xml));
@@ -51,10 +57,16 @@ namespace AnimalShelterApi
       {
         app.UseDeveloperExceptionPage();
         app.UseSwagger();
-        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AnimalShelterApi v1"));
+        app.UseSwaggerUI(c =>
+        {
+          c.SwaggerEndpoint("/swagger/v1/swagger.json", "AnimalShelterApi v1");
+          c.InjectStylesheet("/styles.css");
+        });
+
       }
 
       // app.UseHttpsRedirection();
+      app.UseStaticFiles();
 
       app.UseRouting();
 

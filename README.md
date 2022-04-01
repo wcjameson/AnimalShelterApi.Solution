@@ -1,6 +1,6 @@
 # AnimalShelterApi
 
-![image](/wwwroot/img/chrome_VbHn7MSDfL.png)
+![image](/wwwroot/img/chrome_o4A2W5KKLd.png)
 
 #### An API to keep track of dogs and cats in a shelter
 
@@ -95,7 +95,7 @@ DELETE /api/animals/{id}
 
 ## Known Bugs
 
-* _None_
+* Custom css not currently displaying in the swagger ui
 
 ## License
 
