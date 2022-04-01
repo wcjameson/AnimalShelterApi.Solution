@@ -62,21 +62,22 @@ To explore the AnimalShelterApi with NSwag, launch the project using ```dotnet r
 
 ## Animals (Endpoints)
 
-Access information about the animals in the shelter
+Access information about the animals in the shelter.
 
 #### HTTP Request
-`
+```
 GET /api/animals
 POST /api/animals
 GET /api/animals/{id}
 PUT /api/animals/{id}
 DELETE /api/animals/{id}
-`
+```
 #### Path Parameters
 
-| Parameter | Type | Default | Required | Description |
-| name      | string| none   | false    | Return matches by name |
-| species   | string| none   | false    | Return matches by animal species |
+| Parameters     | Type   | Default | Required | Description               |
+| -------------  | ------ | ------- | -------- | ------------------------- |
+| name           | string | none    | false    | Return matches by name    |
+| species        | string | none    | false    | Return matches by species |
 
 #### Example Query
 `https://localhost:5000/api/animals/?name=robert&species=dog`
@@ -88,6 +89,8 @@ DELETE /api/animals/{id}
   "Name": "Robert",
   "Species": "Dog"
 }
+`
+
 ## Known Bugs
 
 * _None_
