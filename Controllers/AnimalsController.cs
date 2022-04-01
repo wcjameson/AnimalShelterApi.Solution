@@ -18,7 +18,10 @@ namespace AnimalShelterApi.Controllers
     {
       _db = db;
     }
-
+    // GET: api/Animals
+    ///<summary> 
+    ///Returns animals based on parameters of query 
+    ///</summary>
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Animal>>> Get(string name, string species)
     {
@@ -37,6 +40,10 @@ namespace AnimalShelterApi.Controllers
       return await query.ToListAsync();
     }
 
+    //GET: api/Animals/5
+    ///<summary>
+    ///Lookup animals by id
+    ///</summary>
     [HttpGet("{id}")]
     public async Task<ActionResult<Animal>> GetAnimal(int id)
     {
@@ -49,6 +56,10 @@ namespace AnimalShelterApi.Controllers
       return animal;
     }
 
+    //Put: api/Animals/5
+    ///<summary> 
+    ///Update a specific animal
+    ///</summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Animal animal)
     {
@@ -65,7 +76,7 @@ namespace AnimalShelterApi.Controllers
       }
       catch (DbUpdateConcurrencyException)
       {
-        if ( !AnimalExists(id))
+        if (!AnimalExists(id))
         {
           return NotFound();
         }
@@ -77,7 +88,10 @@ namespace AnimalShelterApi.Controllers
 
       return NoContent();
     }
-
+    //PUT: Animals
+    ///<summary>
+    ///Add a new animal
+    ///</summary>
     [HttpPost]
     public async Task<ActionResult<Animal>> Post(Animal animal)
     {
@@ -86,7 +100,10 @@ namespace AnimalShelterApi.Controllers
 
       return CreatedAtAction(nameof(GetAnimal), new { id = animal.AnimalId }, animal);
     }
-
+    //DELETE: api/Animals/5
+    ///<summary>
+    ///Delete animal by id
+    ///</summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAnimal(int id)
     {
